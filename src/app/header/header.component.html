@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page"
+      >My Messages</a
+    >
+  </span>
+  <span class="spacer"> </span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a
+        routerLink="/create"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >New Post</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a
+        routerLink="/login"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a
+        routerLink="/signup"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Signup</a
+      >
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">LogOut</button>
+    </li>
+  </ul>
+</mat-toolbar>
+<router-outlet> </router-outlet>
