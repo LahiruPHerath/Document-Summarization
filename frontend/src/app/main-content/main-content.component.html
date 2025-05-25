@@ -42,30 +42,29 @@
   </button>
 
   <!-- Display content-wise summaries if active -->
-  <div *ngIf="activeSummaryType === 'content' && summaries[selectedTopic.id]?.length" 
-       class="mt-8 p-6 bg-gray-100 border border-gray-300 rounded-2xl shadow-md">
-    <h3 class="text-3xl font-semibold text-gray-900 mb-5">📝 Content-Wise Summaries</h3>
-    <ul class="space-y-6">
-      <li *ngFor="let s of summaries[selectedTopic.id]" 
-          class="p-5 bg-white border border-gray-300 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
-        <div class="flex justify-between items-center mb-3">
-          <span class="px-4 py-1 text-sm font-medium text-gray-700 bg-green-100 rounded-full">
-            📅 {{ s.date }}
-          </span>
-        </div>
-        <p class="text-lg text-gray-800 leading-relaxed">
-          {{ s.summary }}
-        </p>
-      </li>
-    </ul>
-  </div>
+<div *ngIf="activeSummaryType === 'content' && summaries[selectedTopic.id]?.length" 
+class="mt-8 p-6 bg-gray-100 border border-gray-300 rounded-2xl shadow-md">
+<h3 class="text-3xl font-semibold text-gray-900 mb-5">📝 Content-Wise Summaries</h3>
+<ul class="space-y-6">
+<li *ngFor="let s of summaries[selectedTopic.id]" 
+   class="p-5 bg-white border border-gray-300 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+ <div class="flex justify-between items-center mb-3">
+   <span class="px-4 py-1 text-sm font-medium text-gray-700 bg-green-100 rounded-full">
+     📅 {{ s.date }}
+   </span>
+ </div>
+ <p class="text-lg text-gray-800 leading-relaxed">
+   {{ s.summary }}
+ </p>
+</li>
+</ul>
+</div>
 
-  <!-- Display combined summary if active -->
-  <div *ngIf="activeSummaryType === 'combined' && combinedSummary" 
-       class="mt-8 p-6 bg-gray-100 border border-gray-300 rounded-2xl shadow-md">
-    <h3 class="text-3xl font-semibold text-gray-900 mb-5">📝 Combined Summary</h3>
-    <p class="text-lg text-gray-800 leading-relaxed">
-      {{ combinedSummary }}
-    </p>
-  </div>
+<!-- Display combined summary if active -->
+<div *ngIf="activeSummaryType === 'combined' && combinedSummary" 
+class="mt-8 p-6 bg-gray-100 border border-gray-300 rounded-2xl shadow-md">
+<h3 class="text-3xl font-semibold text-gray-900 mb-5">📝 Combined Summary</h3>
+<p class="text-lg text-gray-800 leading-relaxed">
+{{ combinedSummary }}
+</p>
 </div>

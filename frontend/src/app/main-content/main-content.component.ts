@@ -21,10 +21,13 @@ export class MainContentComponent {
 
   generateSummary() {
     if (!this.selectedTopic || !this.selectedTopic.id) return; // Ensure a valid topic is selected
-
+  
+    console.log("Selected Topic:", this.selectedTopic); // Debug log
+    console.log("Contents:", this.selectedTopic.contents); // Debug log
+  
     this.isLoading = true;
     this.activeSummaryType = 'content'; // Set active summary type to content-wise
-
+  
     // Call API to generate the summary for the selected topic
     this.summaryService.generateSummary(this.selectedTopic.id).subscribe(
       () => {
@@ -62,10 +65,11 @@ export class MainContentComponent {
 
   getSummary() {
     if (!this.selectedTopic || !this.selectedTopic.id) return; // Ensure a valid topic is selected
-
+  
     // Call API to fetch the summary for the selected topic
     this.summaryService.getSummary(this.selectedTopic.id).subscribe(
       (res) => {
+        console.log("API Response:", res); // Debug log
         // Save the fetched summaries in the dictionary keyed by topic ID
         this.summaries[this.selectedTopic.id] = res.summaries;
         this.isLoading = false; // Reset loading state

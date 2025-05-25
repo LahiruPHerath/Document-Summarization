@@ -50,3 +50,4 @@ results/
 *.env
 *.cfg
 *.yaml
+.qodo
